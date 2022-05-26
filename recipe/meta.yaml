@@ -1,5 +1,5 @@
 {% set name = "universal_pathlib" %}
-{% set version = "0.0.17" %}
+{% set version = "0.0.18" %}
 
 package:
   name: {{ name|lower }}
@@ -10,7 +10,7 @@ source:
   # uncomment the line below, and modify as needed. Use releases if available:
   # url: https://github.com/Quansight/universal_pathlib/releases/download/{{ version }}/universal_pathlib-{{ version }}.tar.gz
   url: https://github.com/Quansight/universal_pathlib/archive/v{{ version }}.tar.gz
-  sha256: a18e0a1b3e6942951ed1584c3f82cd6424c133093a74d14da5ac46ce8fcac599
+  sha256: 8ea19c5c98e1581448b14d58cc251c1ceadadc44b3012084b68a49ecfdad3177
 
 build:
   noarch: python
