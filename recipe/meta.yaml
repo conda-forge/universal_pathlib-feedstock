@@ -1,5 +1,5 @@
 {% set name = "universal_pathlib" %}
-{% set version = "0.0.23" %}
+{% set version = "0.0.24" %}
 
 package:
   name: {{ name|lower }}
@@ -8,9 +8,8 @@ package:
 source:
   # If getting the source from GitHub, remove the line above,
   # uncomment the line below, and modify as needed. Use releases if available:
-  # url: https://github.com/Quansight/universal_pathlib/releases/download/{{ version }}/universal_pathlib-{{ version }}.tar.gz
-  url: https://github.com/Quansight/universal_pathlib/archive/v{{ version }}.tar.gz
-  sha256: 381870b5ab759f548d3def0720a5bc93544f5371d2843078fc43a99dc298162f
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: fcbffb95e4bc69f704af5dde4f9a624b2269f251a38c81ab8bec19dfeaad830f
 
 build:
   noarch: python
@@ -18,21 +17,18 @@ build:
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
-  build:
-    - {{ compiler('c') }}
   host:
-    - python >=3.7
     - pip
-    - flit
+    - python >=3.8
+    - setuptools-scm
   run:
-    - python >=3.7
-    - fsspec >=0.8.3
+    - python >=3.8
+    - fsspec
 
 
 test:
   imports:
     - upath
-    - upath.tests
 
 about:
   home: https://github.com/Quansight/universal_pathlib
