@@ -8,9 +8,8 @@ package:
 source:
   # If getting the source from GitHub, remove the line above,
   # uncomment the line below, and modify as needed. Use releases if available:
-  # url: https://github.com/Quansight/universal_pathlib/releases/download/{{ version }}/universal_pathlib-{{ version }}.tar.gz
-  url: https://github.com/Quansight/universal_pathlib/archive/v{{ version }}.tar.gz
-  sha256: f1c5d8dfe7a1311ac0c117d945eefd12a6ea8a12ea61666a08a02cbf63599921
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: fcbffb95e4bc69f704af5dde4f9a624b2269f251a38c81ab8bec19dfeaad830f
 
 build:
   noarch: python
