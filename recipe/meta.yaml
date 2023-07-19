@@ -18,21 +18,18 @@ build:
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
-  build:
-    - {{ compiler('c') }}
   host:
-    - python >=3.7
     - pip
-    - flit
+    - python >=3.8
+    - setuptools-scm
   run:
-    - python >=3.7
-    - fsspec >=0.8.3
+    - python >=3.8
+    - fsspec
 
 
 test:
   imports:
     - upath
-    - upath.tests
 
 about:
   home: https://github.com/Quansight/universal_pathlib
