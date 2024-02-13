@@ -22,7 +22,7 @@ requirements:
     - python >=3.8
     - setuptools-scm
   run:
-    - python >=3.8,<3.12
+    - python >=3.8
     - fsspec >=2022.1.0
 
 
