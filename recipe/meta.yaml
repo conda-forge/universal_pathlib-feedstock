@@ -1,5 +1,5 @@
 {% set name = "universal_pathlib" %}
-{% set version = "0.2.2" %}
+{% set version = "0.2.3" %}
 
 package:
   name: {{ name|lower }}
@@ -9,7 +9,7 @@ source:
   # If getting the source from GitHub, remove the line above,
   # uncomment the line below, and modify as needed. Use releases if available:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6bc215548792ad5db3553708b1c19bafd9e2fa1667dc925ed404c95e52ae2f13
+  sha256: 22f5f289fedec4b663956596742652e2177bca24661b6c8a173f5974cfee0052
 
 build:
   noarch: python
