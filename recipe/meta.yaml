@@ -20,7 +20,8 @@ requirements:
   host:
     - pip
     - python >=3.8
-    - setuptools-scm
+    - setuptools >=48
+    - setuptools-scm >=6.3.1
   run:
     - python >=3.8
     - fsspec >=2022.1.0
@@ -31,12 +32,12 @@ test:
     - upath
 
 about:
-  home: https://github.com/Quansight/universal_pathlib
+  home: https://github.com/fsspec/universal_pathlib
   license: MIT
   license_family: MIT
   license_file: LICENSE
   summary: pathlib api extended to use fsspec backends
-  dev_url: https://github.com/Quansight/universal_pathlib
+  dev_url: https://github.com/fsspec/universal_pathlib
 
 extra:
   recipe-maintainers:
