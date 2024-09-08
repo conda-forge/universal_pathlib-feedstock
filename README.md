@@ -3,13 +3,13 @@ About universal_pathlib-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/universal_pathlib-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/Quansight/universal_pathlib
+Home: https://github.com/fsspec/universal_pathlib
 
 Package license: MIT
 
 Summary: pathlib api extended to use fsspec backends
 
-Development: https://github.com/Quansight/universal_pathlib
+Development: https://github.com/fsspec/universal_pathlib
 
 Current build status
 ====================
