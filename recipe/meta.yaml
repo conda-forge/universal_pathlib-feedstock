@@ -1,5 +1,5 @@
 {% set name = "universal_pathlib" %}
-{% set version = "0.2.5" %}
+{% set version = "0.2.6" %}
 
 package:
   name: {{ name|lower }}
@@ -9,11 +9,11 @@ source:
   # If getting the source from GitHub, remove the line above,
   # uncomment the line below, and modify as needed. Use releases if available:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ea5d4fb8178c2ab469cf4fa46d0ceb16ccb378da46dbbc28a8b9c1eebdccc655
+  sha256: 50817aaeaa9f4163cb1e76f5bdf84207fa05ce728b23fd779479b3462e5430ac
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -24,9 +24,7 @@ requirements:
     - setuptools-scm >=6.3.1
   run:
     - python >={{ python_min }}
-    - fsspec >=2022.1.0
-    - typing_extensions  # see: fsspec/universal-pathlib#298 
-
+    - fsspec >=2022.1.0,!=2024.3.1
 
 test:
   requires:
