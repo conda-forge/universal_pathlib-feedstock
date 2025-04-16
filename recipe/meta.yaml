@@ -1,5 +1,7 @@
 {% set version = "0.2.6" %}
 
+{% set PYTHON = PYTHON | default("$PYTHON") %}
+
 package:
   name: universal_pathlib
   version: {{ version }}
@@ -12,11 +14,11 @@ source:
 
 build:
   number: 0
+  noarch: python
 
 outputs:
   - name: universal_pathlib
     build:
-      noarch: python
       script: {{ PYTHON }} -m pip install . -vv
     requirements:
       host:
