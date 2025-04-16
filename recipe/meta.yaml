@@ -11,12 +11,12 @@ source:
   sha256: 50817aaeaa9f4163cb1e76f5bdf84207fa05ce728b23fd779479b3462e5430ac
 
 build:
-  noarch: python
   number: 0
 
 outputs:
   - name: universal_pathlib
     build:
+      noarch: python
       script: {{ PYTHON }} -m pip install . -vv
     requirements:
       host:
