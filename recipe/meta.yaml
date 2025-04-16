@@ -16,7 +16,8 @@ build:
 
 outputs:
   - name: universal_pathlib
-    script: build_base.sh
+    build:
+      script: {{ PYTHON }} -m pip install . -vv
     requirements:
       host:
         - pip
