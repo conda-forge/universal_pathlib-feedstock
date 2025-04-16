@@ -1,36 +1,49 @@
-{% set name = "universal_pathlib" %}
 {% set version = "0.2.6" %}
 
+{% set PYTHON = PYTHON | default("$PYTHON") %}
+
 package:
-  name: {{ name|lower }}
+  name: universal_pathlib
   version: {{ version }}
 
 source:
   # If getting the source from GitHub, remove the line above,
   # uncomment the line below, and modify as needed. Use releases if available:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/u/universal_pathlib/universal_pathlib-{{ version }}.tar.gz
   sha256: 50817aaeaa9f4163cb1e76f5bdf84207fa05ce728b23fd779479b3462e5430ac
 
 build:
   noarch: python
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 1
 
-requirements:
-  host:
-    - pip
-    - python {{ python_min }}
-    - setuptools >=48
-    - setuptools-scm >=6.3.1
-  run:
-    - python >={{ python_min }}
-    - fsspec >=2022.1.0,!=2024.3.1
+outputs:
+  - name: universal_pathlib
+    build:
+      script: {{ PYTHON }} -m pip install . -vv
+    requirements:
+      host:
+        - pip
+        - python {{ python_min }}
+        - setuptools >=48
+        - setuptools-scm >=6.3.1
+      run:
+        - python >={{ python_min }}
+        - fsspec >=2022.1.0,!=2024.3.1
+    test:
+      requires:
+        - python {{ python_min }}
+      imports:
+        - upath
 
-test:
-  requires:
-    - python {{ python_min }}
-  imports:
-    - upath
+  - name: universal-pathlib
+    build:
+      noarch: generic
+    requirements:
+      run:
+        - {{ pin_subpackage('universal_pathlib', max_pin="x.x.x") }}
+    test:
+      imports:
+        - upath
 
 about:
   home: https://github.com/fsspec/universal_pathlib

@@ -29,6 +29,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-universal--pathlib-green.svg)](https://anaconda.org/conda-forge/universal-pathlib) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/universal-pathlib.svg)](https://anaconda.org/conda-forge/universal-pathlib) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/universal-pathlib.svg)](https://anaconda.org/conda-forge/universal-pathlib) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/universal-pathlib.svg)](https://anaconda.org/conda-forge/universal-pathlib) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-universal_pathlib-green.svg)](https://anaconda.org/conda-forge/universal_pathlib) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/universal_pathlib.svg)](https://anaconda.org/conda-forge/universal_pathlib) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/universal_pathlib.svg)](https://anaconda.org/conda-forge/universal_pathlib) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/universal_pathlib.svg)](https://anaconda.org/conda-forge/universal_pathlib) |
 
 Installing universal_pathlib
@@ -41,41 +42,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `universal_pathlib` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `universal-pathlib, universal_pathlib` can be installed with `conda`:
 
 ```
-conda install universal_pathlib
-```
-
-or with `mamba`:
-
-```
-mamba install universal_pathlib
-```
-
-It is possible to list all of the versions of `universal_pathlib` available on your platform with `conda`:
-
-```
-conda search universal_pathlib --channel conda-forge
+conda install universal-pathlib universal_pathlib
 ```
 
 or with `mamba`:
 
 ```
-mamba search universal_pathlib --channel conda-forge
+mamba install universal-pathlib universal_pathlib
+```
+
+It is possible to list all of the versions of `universal-pathlib` available on your platform with `conda`:
+
+```
+conda search universal-pathlib --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search universal-pathlib --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search universal_pathlib --channel conda-forge
+mamba repoquery search universal-pathlib --channel conda-forge
 
-# List packages depending on `universal_pathlib`:
-mamba repoquery whoneeds universal_pathlib --channel conda-forge
+# List packages depending on `universal-pathlib`:
+mamba repoquery whoneeds universal-pathlib --channel conda-forge
 
-# List dependencies of `universal_pathlib`:
-mamba repoquery depends universal_pathlib --channel conda-forge
+# List dependencies of `universal-pathlib`:
+mamba repoquery depends universal-pathlib --channel conda-forge
 ```
 
 
