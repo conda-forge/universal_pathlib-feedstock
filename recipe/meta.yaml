@@ -13,8 +13,8 @@ source:
   sha256: 50817aaeaa9f4163cb1e76f5bdf84207fa05ce728b23fd779479b3462e5430ac
 
 build:
-  number: 0
   noarch: python
+  number: 0
 
 outputs:
   - name: universal_pathlib
