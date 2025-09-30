@@ -1,4 +1,4 @@
-{% set version = "0.2.6" %}
+{% set version = "0.3.0" %}
 
 {% set PYTHON = PYTHON | default("$PYTHON") %}
 
@@ -10,30 +10,33 @@ source:
   # If getting the source from GitHub, remove the line above,
   # uncomment the line below, and modify as needed. Use releases if available:
   url: https://pypi.org/packages/source/u/universal_pathlib/universal_pathlib-{{ version }}.tar.gz
-  sha256: 50817aaeaa9f4163cb1e76f5bdf84207fa05ce728b23fd779479b3462e5430ac
+  sha256: 4f997ffc5210a4bfba1a7deeab40b836a2fa53b8e32fc7e6aef84592ee9ded59
 
 build:
   noarch: python
-  number: 1
+  number: 0
 
 outputs:
   - name: universal_pathlib
     build:
-      script: {{ PYTHON }} -m pip install . -vv
+      script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
     requirements:
       host:
         - pip
         - python {{ python_min }}
-        - setuptools >=48
-        - setuptools-scm >=6.3.1
+        - setuptools >=64
+        - setuptools-scm >=8
       run:
         - python >={{ python_min }}
-        - fsspec >=2022.1.0,!=2024.3.1
+        - fsspec >=2024.5.0
+        - pathlib-abc ==0.5.1
     test:
       requires:
         - python {{ python_min }}
       imports:
         - upath
+        - upath.types
+        - upath.registry
 
   - name: universal-pathlib
     build:
@@ -44,6 +47,8 @@ outputs:
     test:
       imports:
         - upath
+        - upath.types
+        - upath.registry
 
 about:
   home: https://github.com/fsspec/universal_pathlib
