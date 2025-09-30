@@ -19,21 +19,24 @@ build:
 outputs:
   - name: universal_pathlib
     build:
-      script: {{ PYTHON }} -m pip install . -vv
+      script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
     requirements:
       host:
         - pip
         - python {{ python_min }}
-        - setuptools >=48
-        - setuptools-scm >=6.3.1
+        - setuptools >=64
+        - setuptools-scm >=8
       run:
         - python >={{ python_min }}
-        - fsspec >=2022.1.0,!=2024.3.1
+        - fsspec >=2024.5.0
+        - pathlib-abc ==0.5.1
     test:
       requires:
         - python {{ python_min }}
       imports:
         - upath
+        - upath.types
+        - upath.registry
 
   - name: universal-pathlib
     build:
@@ -44,6 +47,8 @@ outputs:
     test:
       imports:
         - upath
+        - upath.types
+        - upath.registry
 
 about:
   home: https://github.com/fsspec/universal_pathlib
