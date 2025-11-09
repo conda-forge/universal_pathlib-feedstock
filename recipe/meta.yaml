@@ -1,4 +1,4 @@
-{% set version = "0.3.4" %}
+{% set version = "0.3.5" %}
 
 {% set PYTHON = PYTHON | default("$PYTHON") %}
 
@@ -10,7 +10,7 @@ source:
   # If getting the source from GitHub, remove the line above,
   # uncomment the line below, and modify as needed. Use releases if available:
   url: https://pypi.org/packages/source/u/universal_pathlib/universal_pathlib-{{ version }}.tar.gz
-  sha256: 8472df61ea931eb7e8158abf5a12ec9c45103dc58716c0103cf5e88712fa357a
+  sha256: e3a9bf8a4e73e25c95c86af5028345013701355e8d573e68dd1ffeeb18fa71b7
 
 build:
   noarch: python
